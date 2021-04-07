@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical6</title>
+    <script src="/AngularJsFile/angular.min.js"></script>
+    <script src="practical6.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+
+    <div class="col-md-12 well">
+        <div id="bg-background" class="col-md-8">
+            <h4 style="color: white;">PRODUCTS<h4>
+                    <hr style="border-top:1px groovy #ccc;">
+                    <div id="product">
+                        <div id="p_list" ng-repeat="product in products ">
+
+                            <center><img ng-src="{{product.p_image}}" /></center>
+                            <h5 style="color: white;margin-left: 5px;">{{product.p_name}}</h5>
+                            <div><label id="price">Price: ₹{{product.p_price}}</label></div>
+                            <center><button id="cart" type="button" ng-click="add_cart(product)">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button>
+                            </center>
+                        </div>
+                    </div>
+        </div>
+        <div class="pull-right col-md-4">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4>MY ORDER</h4>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table table-mod">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="cart in carts" ng-init="setTotals(cart)">
+                                <td>{{cart.p_name}}</td>
+                                <td>₹{{cart.p_price}}</td>
+                                <td><button type="button" ng-click="remove_cart(cart)" class="btn btn-danger">
+                                        <span>Remove</span></button></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                    <table class="table table-mod">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Product Total</td>
+                                <td>₹{{total}}</td>
+                            </tr>
+                            <tr>
+                                <td>Gst</td>
+                                <td>₹{{gst}}</td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Total Amount</td>
+                                <td class="bold">₹{{netprice}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

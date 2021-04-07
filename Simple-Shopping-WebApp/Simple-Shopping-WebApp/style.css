@@ -1,0 +1,54 @@
+#bg-background{
+	background-color:rgb(29, 27, 27);
+	padding:10px;
+	border-radius:5px;
+}
+
+#product{
+	padding:5px;
+	clear:both;
+}
+
+#p_list{
+	width:180px;
+	max-width:180px;
+	height:230px;
+	max-height:230px;
+	padding:5px;
+	border:1px solid rgb(253, 250, 250);
+	float:left;
+    border-radius: 10px;
+	margin:15px;
+}
+#price{
+    font-size: 13px;
+    color: white;
+    margin-left: 5px;
+}
+#p_list img{
+	height:130px; 
+	width:130px;
+    margin: 5px;
+}
+#cart{
+    font-size: small;
+    margin: 10px;
+    background-color:  rgb(247, 147, 16);
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+.table-mod > thead > tr > th,
+.table-mod > tbody > tr > th,
+.table-mod > tfoot > tr > th,
+.table-mod > thead > tr > td,
+.table-mod > tbody > tr > td,
+.table-mod > tfoot > tr > td{
+    border-top: 0px;
+
+}
+.bold{
+    font-weight: 700;
+}
+.panel-heading{
+    background-color: rgb(247, 147, 16);
+}
